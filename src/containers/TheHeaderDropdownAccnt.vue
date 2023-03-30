@@ -23,9 +23,7 @@
 
 
 
-    <!-- <CDropdownItem>
-      <CIcon name="cil-settings" /> Settings
-    </CDropdownItem> -->
+
 
     <CDropdownDivider />
 

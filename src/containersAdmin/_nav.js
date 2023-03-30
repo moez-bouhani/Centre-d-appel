@@ -23,7 +23,7 @@ export default [{
       route: '/base',
       icon: 'cil-puzzle',
       items: [{
-          name:'Ajoutr',
+          name:'Ajouter',
           to: '/',
        
         },

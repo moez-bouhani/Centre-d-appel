@@ -26,12 +26,23 @@
           -
           </td>
           <td> 
-        
-             <router-link :to="{ name: 'ajouter-numero', params: { id: user.id } }"
+        <div v-show="user.numero_post.length!=0">
+          <router-link :to="{ name: 'ajouter-numero', params: { id: user.id } }"
               >
            
               <img   title="Ajouter Numero de poste" src="/add_poste.png" alt="add" /> 
               </router-link>
+        </div>
+
+
+        <div v-show="user.numero_post.length==0">
+          <router-link :to="{ name: 'ajouter-poste', params: { id: user.id } }"
+              >
+           
+              <img   title="Ajouter Numero de poste" src="/add_poste.png" alt="add" /> 
+              </router-link>
+        </div>
+           
 
           <!--     <i
                 class="fa fa-trash text-danger"

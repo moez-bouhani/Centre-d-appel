@@ -73,7 +73,12 @@ function configRoutes() {
       name: "ajouter-numero",
       component: () => import("@/pages/Admin/AjouterNumeros.vue"),
     },
-
+    {
+      path: "/ajouter-poste/:id",
+      name: "ajouter-poste",
+      component: () => import("@/pages/Admin/AjouterPoste.vue"),
+    },
+    
     {
       path: "/listes-emps",
       name: "listes-emps",

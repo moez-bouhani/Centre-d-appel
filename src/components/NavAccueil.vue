@@ -26,16 +26,20 @@
           <p>Connection</p>
         </router-link>
       </li>
-      <!--   style="margin-left: 90px; margin-top: -4px" -->
-      <li class="photo" v-if="loggedIn && this.$store.state.user.role == 3">
-        <TheHeaderDropdownAccnt />
+    
+      <li  class="nav-item"  v-if="loggedIn && this.$store.state.user.role == 1">
+        <router-link class="nav-link btn btn-warning" to="/dashboard">
+          <p>Dashboard</p>
+        </router-link>
       </li>
-      <li class="photo" v-if="loggedIn && this.$store.state.user.role == 2">
-        <TheHeaderDropdownAccnt />
+
+      <li  class="nav-item"  v-if="loggedIn && this.$store.state.user.role == 2">
+        <router-link class="nav-link btn btn-warning" to="/listes-emps">
+          <p>Dashboard</p>
+        </router-link>
       </li>
-      <li class="photo" v-if="loggedIn && this.$store.state.user.role == 1">
-        <TheHeaderDropdownAccnt />
-      </li>
+      
+      
     </template>
   </navbar>
 </template>

@@ -13,35 +13,46 @@
       </div>
       <!-- End Card nom et prénom user -->
       <!-- Start Card numéro poste -->
-<div class="card" style="border-radius: 15px;height:45px !important">
+      <div class="card" style="border-radius: 15px;height:45px !important">
         <div class="card-body" style="padding: 0.9em">
           <p class="card-text">
             <i class="fas fa-desktop"></i><span> Poste N° {{
-            listesUsers[0].numero_post[0].num
+          num
           }}</span>
           </p>
+
+       
         </div>
+      
       </div>
 
     </div>
-    <div class="d-flex justify-content-between">
-      <div>
-        <input type="file" ref="fileInput" @change="handleFileUpload" />
-      </div>
-      <div>
-        <button
+  
+
+    <div>
+      <b-card>
+        <div>
+          <CInput
+                    required
+                    placeholder="Entrer le nuemro de poste"
+                    v-model="num"
+                  >
+                    
+                  </CInput>
+                  <button
           style="background: #232830;
     color: #fff;
     border-radius: 12px;
     padding: 10px;"
           type="sumit"
           color="primary"
-          class="btn btn-link mt-3"
-          @click="AjouterNumeros"
+          class="btn btn-link "
+          @click="AjouterPoste"
         >
-          Ajouter le fichier Excel
+          Ajouter poste
         </button>
-      </div>
+        </div>
+      </b-card>
     </div>
   </div>
 </template>
@@ -58,29 +69,24 @@ export default {
       saveData: [],
       isLoading: false,
       isLoadingCopie: false,
+      num:'',
     };
   },
   created() {
     this.fetchListesUsersById(this.$route.params.id);
   },
   methods: {
-    AjouterNumeros() {
+    AjouterPoste() {
       this.isLoading = true;
-      var n = this.saveData[0];
-      n.forEach((i) => {
+   
+   
         let formData = new FormData();
-        formData.append("nom", i[0]);
-        formData.append("prenom", i[1]);
-
-        formData.append("adresse", i[2]);
-        formData.append("code_postale", i[3]);
-
-        formData.append("date_nais", i[4]);
-        formData.append("telephone", i[5]);
+        formData.append("num", this.num);
+       
         formData.append("user_id", this.$route.params.id);
         axios
           .post(
-            `${apiDomain}/api/numero`,
+            `${apiDomain}/api/add/poste/${this.$route.params.id}`,
 
             formData,
             {
@@ -93,39 +99,18 @@ export default {
 
           .then((res) => {
             this.isLoading = false;
-
-            // this.fetchsearch();
+     
+            this.$noty.success("Numéro de Poste a été ajoutée avec Succès ! ");
+           this.$router.push("/listes-emps");
           })
 
           .catch((error) => {
             this.isLoading = false;
-
-            console.log(error.response.data);
           });
-      });
-      this.$noty.success("Tous les numéros ont été ajoutée avec Succès ! ");
+
     },
 
-    handleFileUpload(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        const data = new Uint8Array(reader.result);
-        const workbook = XLSX.read(data, { type: "array" });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-        console.log(rows);
-        // Call a method to save data to the database
-
-        this.saveData.push(rows);
-        /*  this.AjouterNumeros(); */
-      };
-
-      reader.readAsArrayBuffer(file);
-    },
+  
 
     fetchListesUsersById(id) {
       axios

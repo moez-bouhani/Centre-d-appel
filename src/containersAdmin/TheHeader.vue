@@ -25,8 +25,8 @@
       </CHeaderNavItem> -->
 
       <CHeaderNavItem class="px-3 iii">
-        <CHeaderNavLink to="/ajout_rdv">
-         Listes Numéros
+        <CHeaderNavLink to="/listes-emps">
+          Listes Téléopérateurs
         </CHeaderNavLink>
       </CHeaderNavItem>
       <CHeaderNavItem class="px-3">

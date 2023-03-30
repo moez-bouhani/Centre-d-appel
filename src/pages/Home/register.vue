@@ -8,11 +8,11 @@
       <div class="col-md-4"></div>
 
       <div class="col-md-4" style="margin-top: -50px;">
-        <CCard class="p-4" style="border-radius: 20px;">
+        <CCard class="p-4" style="border-radius: 20px;background-color:#232830">
           <CCardBody>
             <CForm @submit.prevent="performRegister">
               <center>
-                <h1 style="color: #c90f2b">Inscription</h1>
+                <h2 style="color: #f1991b" class="mb-3">Inscription</h2>
                <!--  <p class="text-muted">Session patient</p> -->
               </center>
 
@@ -147,7 +147,7 @@
 
               <CRow>
                 <CCol col="6" class="text-left">
-                  <CButton type="submit" style="background-color: #c90f2b;
+                  <CButton type="submit" style="background-color: #F1991B;
     border-radius: 15px;" color="primary" class="px-4">
                     {{ isCreating ? "En cours attendez ..." : "S'inscrire" }}
                   </CButton>
@@ -156,7 +156,7 @@
              
               </CRow>
               <span class="inscriii"
-                ><router-link to="/connection" style="color: #496664">
+                ><router-link to="/connection" style="color: #fff">
                   Déja un membre? <B> Se connecter.</B>
                 </router-link></span
               >

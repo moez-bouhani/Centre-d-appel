@@ -15,7 +15,7 @@
     </CHeaderBrand>
     <CHeaderNav class="d-md-down-none mr-auto">
       <CHeaderNavItem class="px-3">
-        <CHeaderNavLink to="/">
+        <CHeaderNavLink>
           <div class="icons8-accueil"></div>
         </CHeaderNavLink>
       </CHeaderNavItem>

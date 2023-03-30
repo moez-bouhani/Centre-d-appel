@@ -8,11 +8,11 @@
       <div class="col-md-4"></div>
 
       <div class="col-md-4">
-        <CCard class="p-4" style="border-radius: 20px;">
+        <CCard class="p-4" style="border-radius: 20px;background-color:#232830">
           <CCardBody>
             <CForm @submit.prevent="performLogin">
               <center>
-                <h1 style="color: #c90f2b">Login Admin</h1>
+                <h2 style="color: #f1991b" class="mb-3">Login Admin</h2>
                <!--  <p class="text-muted">Session patient</p> -->
               </center>
               <div class="row">
@@ -93,7 +93,7 @@
 
               <B>
                 <span class="oublierrr"
-                  ><router-link to="/motPasseOublier" style="color: #496664">
+                  ><router-link to="/motPasseOublier" style="color: #fff">
                     mot de passe oublié ?
                   </router-link>
                 </span>
@@ -101,7 +101,7 @@
 
               <CRow>
                 <CCol col="6" class="text-left">
-                  <CButton type="submit" style="background-color: #c90f2b;
+                  <CButton type="submit" style="background-color: #F1991B;
     border-radius: 15px;" color="primary" class="px-4">
                     {{ isLoading ? "En cours attendez ..." : "Se connecter" }}
                   </CButton>
@@ -110,7 +110,7 @@
               
               </CRow>
               <span class="inscriii"
-                ><router-link to="/inscription" style="color: #496664">
+                ><router-link to="/inscription" style="color: #fff">
                   Vous n'avez pas encore un compte?<B> S'inscrire.</B>
                 </router-link></span
               >

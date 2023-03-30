@@ -8,12 +8,7 @@
     <CSidebarBrand class="d-md-down-none" to="/">
       <!-- logo and name -->
 
-      <div class="c-avatar">
-        <img
-          :src="`${apiDomain}/uploads/files_user/${userSingll.photo}`"
-          class="c-avatar-img"
-        />
-      </div>
+     <h4>NFON</h4> 
 
       <CIcon
         class="c-sidebar-brand-minimized"

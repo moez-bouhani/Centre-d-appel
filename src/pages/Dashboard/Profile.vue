@@ -14,7 +14,7 @@
               <img
                 v-if="!showPreview"
                 class="rounded-circle"
-                :src="`${apiDomain}/uploads/files_user/${userSingll.photo}`"
+                src="../../assets/img/center/call-centre-customer.png"
                 width="40%"
               />
             </center>
@@ -54,7 +54,7 @@
                   <img
                     class="img-responsive rounded-circle"
                     v-b-modal.modal-edit-image
-                    :src="`${apiDomain}/uploads/files_user/${userSingll.photo}`"
+                    src="../../assets/img/center/call-centre-customer.png"
                     style="width: 200%; margin-left: -23px"
                   />
                 </center>

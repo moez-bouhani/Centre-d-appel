@@ -150,7 +150,8 @@ export default {
         return this.numeros.filter((numero) => {
           return (
             numero.nom.toLowerCase().match(this.search.toLowerCase()) ||
-            numero.prenom.toLowerCase().match(this.search.toLowerCase())
+            numero.prenom.toLowerCase().match(this.search.toLowerCase())||
+            numero.telephone.toLowerCase().match(this.search.toLowerCase())
           );
         });
       }

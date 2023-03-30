@@ -10,7 +10,7 @@
 
       <div class="c-avatar">
         <img
-          :src="`${apiDomain}/uploads/files_user/${userSingll.photo}`"
+        src="../assets/img/center/call-centre-customer.png"
           class="c-avatar-img"
         />
       </div>

@@ -43,6 +43,17 @@
         </button>
       </div>
     </div>
+
+    <div>
+      <b-card>
+        <div>
+          Nom: {{ listesUsers[0].nom }} | Prénom: {{ listesUsers[0].prenom }} |
+          Téléphone: {{ listesUsers[0].telephone }} | Poste N°:{{
+            listesUsers[0].numero_post[0].num
+          }}
+        </div>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -54,6 +65,7 @@ import csvParse from "csv-parse";
 export default {
   data() {
     return {
+      numero:[],
       listesUsers: [],
       saveData: [],
       isLoading: false,
@@ -66,19 +78,20 @@ export default {
   methods: {
     AjouterNumeros() {
       this.isLoading = true;
-      var n = this.saveData[0];
-      n.forEach((i) => {
-        let formData = new FormData();
-        formData.append("nom", i[0]);
-        formData.append("prenom", i[1]);
-
-        formData.append("adresse", i[2]);
-        formData.append("code_postale", i[3]);
-
-        formData.append("date_nais", i[4]);
-        formData.append("telephone", i[5]);
-        formData.append("user_id", this.$route.params.id);
-        axios
+      this.numero=this.saveData[0];
+      var n = this.numero;
+      // for (var i = 0; i < n.length; i++) {
+      let formData = new FormData();
+      for (var i = 0; i < this.numero.length; i++) {
+        formData.append("numero[" + i + "][nom]",this.numero[i][0]);
+        formData.append("numero[" + i + "][prenom]",this.numero[i][1]);
+        formData.append("numero[" + i + "][adresse]",this.numero[i][2]);
+        formData.append("numero[" + i + "][code_postale]",this.numero[i][3]);
+        formData.append("numero[" + i + "][date_nais]",this.numero[i][4]);
+        formData.append("numero[" + i + "][telephone]",this.numero[i][5]);
+        formData.append("numero[" + i + "][user_id]",this.$route.params.id);
+      };
+              axios
           .post(
             `${apiDomain}/api/numero`,
 
@@ -102,7 +115,6 @@ export default {
 
             console.log(error.response.data);
           });
-      });
       this.$noty.success("Tous les numéros ont été ajoutée avec Succès ! ");
     },
 
@@ -121,6 +133,7 @@ export default {
         // Call a method to save data to the database
 
         this.saveData.push(rows);
+        this.numero=this.saveData[0];
         /*  this.AjouterNumeros(); */
       };
 

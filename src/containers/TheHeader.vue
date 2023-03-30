@@ -15,7 +15,7 @@
     </CHeaderBrand>
     <CHeaderNav class="d-md-down-none mr-auto">
       <CHeaderNavItem class="px-3">
-        <CHeaderNavLink to="/">
+        <CHeaderNavLink>
           <div class="icons8-accueil"></div>
         </CHeaderNavLink>
       </CHeaderNavItem>
@@ -25,9 +25,7 @@
       </CHeaderNavItem> -->
 
       <CHeaderNavItem class="px-3 iii">
-        <CHeaderNavLink to="/ajout_rdv">
-         Listes Numéros
-        </CHeaderNavLink>
+        
       </CHeaderNavItem>
       <CHeaderNavItem class="px-3">
         <div>

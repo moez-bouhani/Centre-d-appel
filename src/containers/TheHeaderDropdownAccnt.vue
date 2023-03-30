@@ -9,7 +9,7 @@
       <CHeaderNavLink>
         <div class="c-avatar">
           <img
-            :src="`${apiDomain}/uploads/files_user/${userSingll.photo}`"
+            src="../assets/img/center/call-centre-customer.png"
             class="c-avatar-img"
           />
         </div>
@@ -19,26 +19,9 @@
       <strong>Compte</strong>
     </CDropdownHeader>
 
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 1">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profile/client">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
+  
 
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 2">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profile/secretaire">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
 
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 3">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profil/medecin">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
 
     <!-- <CDropdownItem>
       <CIcon name="cil-settings" /> Settings

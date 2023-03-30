@@ -26,6 +26,7 @@
           <p>Connection</p>
         </router-link>
       </li>
+
     
       <li  class="nav-item"  v-if="loggedIn && this.$store.state.user.role == 1">
         <router-link class="nav-link btn btn-warning" to="/dashboard">
@@ -38,8 +39,7 @@
           <p>Dashboard</p>
         </router-link>
       </li>
-      
-      
+   
     </template>
   </navbar>
 </template>

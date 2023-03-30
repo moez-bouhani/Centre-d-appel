@@ -5,7 +5,7 @@ export default [{
     
     //profile
    
-    {
+   /*  {
       _name: 'CSidebarNavItem',
       name: 'Profil',
       to: '/profile/client',
@@ -18,7 +18,7 @@ export default [{
 
 
 
-    },
+    }, */
 
  
    

@@ -1,11 +1,7 @@
 // If you want to override variables do it here
 @import "variables";
-
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
-
-/* @import "~@fullcalendar/core/main.css";
-@import "~@fullcalendar/daygrid/main.css"; */
 
 // If you want to add something do it here
 
@@ -37,11 +33,7 @@
   height: 90px;
   margin: 20px 20px;
   border-color: rgb(255, 201, 53) !important;
-  //@at-root background-color: rgb(255, 201, 53) !important;
 }
-
-
-
 
 .titreCategorie {
   margin-top: 40px;
@@ -58,12 +50,10 @@
   position: relative;
   z-index: 10;
   color: #000;
-  // font-size: 10px;
 }
 
 .zIndex {
   position: absolute;
-  //top:-1px;
   z-index: 1;
 }
 
@@ -85,11 +75,6 @@
   margin-top: 20px;
 }
 
-/* element.style {
-  margin-top: 5px;
-  margin-left: 10px;
-} */
-
 
 .v-time-ago__text {
   font-size: 11px;
@@ -97,7 +82,6 @@
   margin-left: 5px;
   text-decoration: none;
   line-height: -3px;
-  /* color:   #fff !important; */
   background: #2eb85c !important;
 }
 
@@ -105,7 +89,6 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   cursor: pointer;
-  /* color: #484b52; */
   color: #fff !important;
   right: -56px;
   text-decoration: none;
@@ -124,7 +107,6 @@
   margin-left: 5px;
   text-decoration: none;
   line-height: -3px;
-  /* color:   #fff !important; */
   background: #2eb85c;
 }
 
@@ -132,7 +114,6 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   cursor: pointer;
-  /* color: #484b52; */
   color: #fff !important;
   right: -56px;
   text-decoration: none;
@@ -220,8 +201,6 @@
   position: absolute;
   left: 268px;
   top: 254px;
-  /* z-index: 11; */
-  /* cursor: pointer; */
 }
 
 .inscri {
@@ -231,56 +210,10 @@
   z-index: 11;
   cursor: pointer;
 }
-
-/* 
-.show-icon{
-  position: absolute;
-  left: 363px;
-  top: 191px;
-  z-index: 11;
-  cursor: pointer;
-} */
-
-/* .hide-icon {
-  position: absolute;
-  left: 363px !important;
-  top: 192px !important;
-  z-index: 11 !important;
-  cursor: pointer;
-  color: #555;
-} */
-
-/* @mixin showpass($property) {
-  position: absolute;
-  left: $property;
-  top: 20px;
-  z-index: 11;
-  cursor: pointer;
-}
-.show-icon {
-  @include showpass(20px);
-}
-.hide-icon {
-  @include showpass(18px);
-  color: #555;
-}
-.show-icon {
-  @include showpass(20px);
-}
-.hide-icon {
-  @include showpass(18px);
-  color: #555;
-} */
-//@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
-
-
-
-
 .show-icon {
   position: absolute;
   left: 367px !important;
   top: 171px;
-  /* z-index: 11; */
   cursor: pointer;
 
 }
@@ -289,7 +222,6 @@
   position: absolute;
   left: 367px !important;
   top: 171px;
-  /* z-index: 11; */
   cursor: pointer;
 }
 
@@ -314,26 +246,6 @@
   border-radius: 5px;
 
 }
-
-/* .c-main {
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  min-width: 0;
-  padding-top: 0rem;
-} */
-
-
-.fleche {
-  margin-top: -22px;
-}
-
-
-
 .el-upload-dragger {
   background-color: #fff;
   border: 1px dashed #d9d9d9;
@@ -345,13 +257,3 @@
   position: relative;
   overflow: hidden;
 }
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: -16px;
-  margin-bottom: 0.5rem;
-} */

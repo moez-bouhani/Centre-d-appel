@@ -114,15 +114,7 @@ function configRoutes() {
           path: "/admin",
           name: "connection-admin",
           component: () => import("@/pages/Home/connectionAdmin.vue"),
-        },
-
-         {
-          path: "/test2",
-          name: "test2",
-          component: () => import("@/pages/Home/test2.vue"),
-        },
-
-        
+        },  
         
       ],
     },

@@ -2,6 +2,7 @@
   <div class="container">
 
     <!-- Start Div flex Card nom et prénom user, Card num poste, Card numéro copie, Bouton copier -->
+    <div id="stickyDiv">
     <div
       style="display: flex; align-items: center; justify-content: space-between"
     >
@@ -18,7 +19,9 @@
 <div class="card" style="border-radius: 15px;height:45px !important">
         <div class="card-body" style="padding: 0.9em">
           <p class="card-text">
-            <i class="fas fa-desktop"></i><span> Poste N° 1123</span>
+            <i class="fas fa-desktop"></i><span> Poste N° {{
+            listesUsers[0].numero_post[0].num
+          }}</span>
           </p>
         </div>
       </div>
@@ -59,6 +62,7 @@
       </CButton>
       <!-- End Bouton copir numéro suivant -->
     </div>
+    </div>
     <div class="form-group">
             <input
               v-model="search"
@@ -68,9 +72,10 @@
               placeholder="Chercher ... "
             />
           </div>
+          
     <!-- End Div flex Card nom et prénom user, Card num poste, Card numéro copie, Bouton copier -->
     <!-- Start table de la liste des numéros-->
-    <table class="table table-hover table-light" style="border-radius: 10px">
+    <table class="table table-hover table-light" style="border-radius: 10px;">
       <thead>
         <tr>
           <th scope="col">Nom</th>
@@ -82,7 +87,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(numero, index) in filtered" :key="index">
+        <tr v-for="(numero, index) in filtered" :key="index" :id="'line'+index">
           <td>{{ numero.nom }}</td>
           <td>{{ numero.prenom }}</td>
           <td>
@@ -136,6 +141,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      listesUsers: [],
       isLoading: false,
       numeros: [],
       currentIndex: localStorage.getItem("myIndex")!=null ? localStorage.getItem("myIndex") :0,
@@ -167,9 +173,16 @@ export default {
       localStorage.setItem("myIndex", myIndex);
   },
   created() {
+    this.fetchListesUsersById(this.$store.state.user.id);
     this.fetchNumeros(this.$store.state.user.id);
   },
   methods: {
+    fetchListesUsersById(id) {
+      axios
+        .get(`${apiDomain}/api/showEmpById/${id}`)
+        .then((response) => (this.listesUsers = response.data.succes))
+        .catch((error) => {});
+    },
     updateLastIndex(index) {
       this.lastIndex = index;
       localStorage.setItem("myIndex", index);
@@ -198,9 +211,16 @@ export default {
           }
         );
         this.fetchNumeros();
+        var indexMoins=(Number(this.currentIndex))-1;
+        document.getElementById('line'+indexMoins).scrollIntoView();
+        document.getElementById("stickyDiv").style.position="sticky";
+        document.getElementById("stickyDiv").style.top="0";
+        document.getElementById("stickyDiv").style.height="53px";
+        document.getElementById("stickyDiv").style.background="#ebebeb";
         this.currentIndex++;
         this.updateLastIndex(this.currentIndex);
         this.fetchNumeros();
+        
       } else {
         this.copiedNumber = null;
       }

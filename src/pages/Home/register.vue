@@ -104,10 +104,7 @@
                       id="passwordAncien"
                       v-model="password"
                     /> -->
-                    <div
-                      class="strength"
-                      :class="'level_' + strengthLevel"
-                    ></div>
+               
 
                     <i
                       class="fas fa-eye show-icon"
@@ -192,36 +189,19 @@ export default {
       telephone: "",
       password: "",
 
-     
-      has_minimum_lenth: false,
-      has_number: false,
-      has_lowercase: false,
-      has_uppercase: false,
-      has_special: false,
-
       isCreating: false,
       isLoading: false,
       error: "",
       errors: [],
 
-      //map
-      markers: [],
-      places: [],
-      currentPlace: null,
-      center: { lat: 45.508, lng: -73.587 },
+ 
     };
   },
   mounted() {
     this.geolocate();
   },
   watch: {
-    password() {
-      this.has_minimum_lenth = this.password.length >= 8;
-      this.has_number = /\d/.test(this.password);
-      this.has_lowercase = /[a-z]/.test(this.password);
-      this.has_uppercase = /[A-Z]/.test(this.password);
-      this.has_special = /[!@#\$%\^\&*\)\(+=._-]/.test(this.password);
-    },
+
   },
   methods: {
   
@@ -229,16 +209,7 @@ export default {
     performRegister() {
       this.isCreating = true;
       this.errors = [];
-      this.pass = null;
-      if (
-        this.has_minimum_lenth == true &&
-        this.has_number == true &&
-        this.has_lowercase == true &&
-        this.has_uppercase == true &&
-        this.has_special == true
-      ) {
-        this.pass = this.password;
-      }
+
       this.$store
         .dispatch("performRegisterAction", {
           email: this.email,
@@ -249,7 +220,7 @@ export default {
 
           nom: this.nom,
 
-          password: this.pass,
+          password: this.password,
         })
         .then((res) => {
           this.isCreating = false;
@@ -295,39 +266,6 @@ export default {
 
         
         });
-    },
-
-    handleInput(adresse) {
-      this.user.adresse = adresse;
-    },
-
-    setPlace(place) {
-      this.adresse = place;
-      if (this.adresse) {
-        const marker = {
-          lat: this.adresse.geometry.location.lat(),
-          lng: this.adresse.geometry.location.lng(),
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.adresse);
-        this.center = marker;
-        // lat and lng, In front-end javascript does not support file management due to security concerns.
-        console.log(marker.lat);
-        console.log(marker.lng);
-
-        // this.user.adresse = null;
-        this.adresse = place;
-      }
-      //   this.user.adresse = place;
-    },
-
-    geolocate: function () {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-      });
     },
   },
 };

@@ -4,20 +4,16 @@ export default [{
     
     
     //profile
-   
-    /* {
+    {
       _name: 'CSidebarNavItem',
-      name: 'Profil',
-      to: '/profile/client',
-      icon: 'cil-user',
-      beforeEnter: (to, from, next) => {
-        if (store.state.loggedIn == false) next("/accueil");
-        next();
-      }
-    }, */
+      name: 'Listes Téléopérateurs',
+      to: '/listes-emp',
+      icon: 'cil-puzzle',
+   
+    }, 
 
  
-    {
+/*     {
       _name: 'CSidebarNavDropdown',
       name: 'Listes Téléopérateurs',
       route: '/base',
@@ -26,7 +22,7 @@ export default [{
           name:'Ajouter',
           to: '/',
        
-        },
+        }, 
         {
           name: 'Listes',
           to: '/listes-emps',
@@ -36,7 +32,7 @@ export default [{
 
        
       ]
-    },
+    }, */
 
     
 

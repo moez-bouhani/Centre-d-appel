@@ -176,15 +176,7 @@ export default {
   },
 
   computed: {
-    isPasswordMatching() {
-      if (
-        this.password == "" ||
-        this.password_confirmation == "" ||
-        this.password != this.password_confirmation
-      )
-        return true;
-      return false;
-    },
+
   },
 
   mounted() {},
@@ -219,14 +211,9 @@ export default {
             this.isLoading = false;
             //this.validationErrors = error.response.data;
             this.$noty.error("OPS ! Login ou password invalid");
-            //    this.validationErrors = "Email or password invalid";
+           
           }
-          if (error.response.status == 403) {
-            this.isLoading = false;
-            //this.validationErrors = error.response.data;
-            this.$noty.error("OPS ! Votre Compte n'est pas activer");
-            //    this.validationErrors = "Email or password invalid";
-          }
+       
         });
     },
   },

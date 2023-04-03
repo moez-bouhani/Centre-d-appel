@@ -19,45 +19,13 @@
       <strong>Compte</strong>
     </CDropdownHeader>
 
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 1">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profile/client">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
-
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 2">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profile/secretaire">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
-
-    <CDropdownItem v-if="loggedIn && this.$store.state.user.role == 3">
-      <CIcon name="cil-user" />
-      <CHeaderNavLink style="color: #605f6b" to="/profil/medecin">
-        Profile
-      </CHeaderNavLink>
-    </CDropdownItem>
-
-    <!-- <CDropdownItem>
-      <CIcon name="cil-settings" /> Settings
-    </CDropdownItem> -->
-
     <CDropdownDivider />
 
     <CDropdownItem>
       <CIcon name="cil-lock-locked" />
       <router-link to="/" style="color: #496664">
-        <!--  <CIcon name="cil-settings" />  -->
         <span @click.prevent="performLogout">Se déconnecter</span>
-      </router-link>
-      <!-- 
-   <CIcon name="cil-lock-locked"/> 
-       <CHeaderNavLink  @click.prevent="performLogout" style="color:#605f6b;">
-          logout
-        </CHeaderNavLink>
- -->
+      </router-link>>
     </CDropdownItem>
   </CDropdown>
 </template>

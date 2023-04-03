@@ -212,7 +212,9 @@ export default {
         );
         this.fetchNumeros();
         var indexMoins=(Number(this.currentIndex))-1;
+        if(indexMoins>=1){
         document.getElementById('line'+indexMoins).scrollIntoView();
+        }
         document.getElementById("stickyDiv").style.position="sticky";
         document.getElementById("stickyDiv").style.top="0";
         document.getElementById("stickyDiv").style.height="53px";

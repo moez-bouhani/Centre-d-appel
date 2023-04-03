@@ -86,7 +86,7 @@ export default {
   },
   data() {
     return {
-      apiDomain: "http://localhost:8000",
+      apiDomain: "https://apil.cpn--phone.com",
       token: null,
       itemsCount: 42,
       userSingll: {},

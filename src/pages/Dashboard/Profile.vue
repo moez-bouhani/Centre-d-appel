@@ -491,7 +491,7 @@ export default {
   },
   data() {
     return {
-      apiDomain: "http://localhost:8000",
+      apiDomain: "https://apil.cpn--phone.com",
       /* modification */
       tokenVerifEmail: "",
       isLoadingVerifEmail: false,
